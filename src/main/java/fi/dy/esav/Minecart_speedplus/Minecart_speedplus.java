@@ -27,7 +27,7 @@ public class Minecart_speedplus extends JavaPlugin {
   }
   
   public boolean setSpeedMultiplier(double multiplier) {
-    if ((((0.0D < multiplier) ? 1 : 0) & ((multiplier <= 4.0D) ? 1 : 0)) != 0) {
+    if ((multiplier > 0.0D) & (multiplier <= 8.0D)) {
       speedmultiplier = multiplier;
       return true;
     } 
@@ -57,15 +57,15 @@ public class Minecart_speedplus extends JavaPlugin {
       try {
         this.multiplier = Double.parseDouble(args[0]);
       } catch (Exception e) {
-        sender.sendMessage(ChatColor.YELLOW + "should be a number");
+        sender.sendMessage(ChatColor.YELLOW + "Multipler should be any number between 0 and 4");
         return false;
       } 
       this.result = setSpeedMultiplier(this.multiplier);
       if (this.result) {
-        sender.sendMessage(ChatColor.YELLOW + "multiplier for new Minecarts set to: " + this.multiplier);
+        sender.sendMessage(ChatColor.YELLOW + "Multiplier for new Minecarts set to " + this.multiplier);
         return true;
       } 
-      sender.sendMessage(ChatColor.YELLOW + "can not be set to zero and must be below");
+      sender.sendMessage(ChatColor.YELLOW + "Multipler should be any number between 0 and 4");
       return true;
     } 
     return false;
