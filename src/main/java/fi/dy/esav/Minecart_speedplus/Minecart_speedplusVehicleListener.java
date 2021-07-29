@@ -23,7 +23,7 @@ public class Minecart_speedplusVehicleListener implements Listener {
 	int blockx, blocky, blockz;
 
 	Block block;
-	int blockid;
+	Material blockid;
 
 	double line1;
 
@@ -65,13 +65,11 @@ public class Minecart_speedplusVehicleListener implements Listener {
 						blockx = cartx + xmod;
 						blocky = carty + ymod;
 						blockz = cartz + zmod;
-						block = cart.getWorld().getBlockAt(blockx, blocky,
-								blockz);
-						blockid = cart.getWorld().getBlockTypeIdAt(blockx,
-								blocky, blockz);
+						block = cart.getWorld().getBlockAt(blockx, blocky, blockz);
+						blockid = cart.getWorld().getBlockAt(blockx, blocky, blockz).getType();
 
-						if (blockid == Material.WALL_SIGN.getId()
-						    || blockid == Material.SIGN_POST.getId()) {
+						if (blockid == Material.OAK_WALL_SIGN
+						    || blockid == Material.LEGACY_SIGN_POST) {
 							Sign sign = (Sign) block.getState();
 							String[] text = sign.getLines();
 
