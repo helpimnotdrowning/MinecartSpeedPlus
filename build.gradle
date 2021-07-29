@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    //maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    //maven { url 'https://oss.sonatype.org/content/repositories/central' }
+}
+
+dependencies {
+  // Pick only one of these and read the comment in the repositories block.
+  //compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
+  //compileOnly 'org.bukkit:bukkit:1.17-R0.1-SNAPSHOT' // The Bukkit API with no shadowing.
+  //compileOnly 'org.spigotmc:spigot:1.17-R0.1-SNAPSHOT' // The full Spigot server with no shadowing. Requires mavenLocal.
+  //compileOnly 'org.bukkit:craftbukkit:1.17-R0.1-SNAPSHOT' // The full CraftBukkit server with no shadowing. Requires mavenLocal.
+  compileOnly 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
+}
